@@ -19,7 +19,7 @@ class Page extends TemplateResource
 {
     public static $title = 'name';
     public static $model = null;
-    public static $displayInNavigation = false;
+    public static $displayInNavigation = true;
     public static $search = ['name', 'slug', 'template'];
 
     protected $type = 'page';
@@ -69,11 +69,11 @@ class Page extends TemplateResource
                 $pageUrl = !empty($pageBaseUrl) ? $pageBaseUrl . $previewPart : null;
                 $buttonText = $this->resource->isDraft() ? __('novaPageManager.viewDraft') : __('novaPageManager.view');
 
-                if (empty($pageBaseUrl)) return "<span class='bg-40 text-sm py-1 px-2 rounded-lg whitespace-no-wrap'>$pagePath</span>";
+                if (empty($pageBaseUrl)) return "<span class='px-2 py-1 text-sm whitespace-no-wrap rounded-lg bg-40'>$pagePath</span>";
 
                 return "<div class='whitespace-no-wrap'>
-                            <span class='bg-40 text-sm py-1 px-2 rounded-lg'>$pagePath</span>
-                            <a target='_blank' href='$pageUrl' class='text-sm py-1 px-2 text-primary no-underline dim font-bold'>$buttonText</a>
+                            <span class='px-2 py-1 text-sm rounded-lg bg-40'>$pagePath</span>
+                            <a target='_blank' href='$pageUrl' class='px-2 py-1 text-sm font-bold no-underline text-primary dim'>$buttonText</a>
                         </div>";
             })->asHtml()->exceptOnForms(),
 

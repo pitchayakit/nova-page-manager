@@ -18,16 +18,6 @@ class NovaPageManager extends Tool
         Nova::script('nova-page-manager-script', __DIR__ . '/../dist/js/nova-page-manager-resources.js');
     }
 
-    /**
-     * Build the view that renders the navigation links for the tool.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function renderNavigation()
-    {
-        return view('nova-page-manager::navigation');
-    }
-
     public static function hasNovaDrafts()
     {
         return class_exists('\OptimistDigital\NovaDrafts\DraftButton') || class_exists('\OptimistDigital\NovaDrafts\PublishedField');
